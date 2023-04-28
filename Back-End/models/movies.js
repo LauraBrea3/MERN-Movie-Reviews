@@ -10,19 +10,20 @@ const movieSchema = new mongoose.Schema({
   },
   rating: {
     type: String,
-    default: "Rating",
+    required: true,
   },
   year: {
     type: Number,
   },
   genre: {
     type: String,
-    default: " ",
+    required: true,
   },
   review: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Review",
+      required: true
     },
   ],
 });
