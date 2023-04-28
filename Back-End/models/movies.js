@@ -1,22 +1,30 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 const movieSchema = new mongoose.Schema({
-    title: { 
-        type: String, 
-        required: true 
+  title: {
+    type: String,
+    required: true,
+  },
+  poster: {
+    type: String,
+    default: "https://placehold.co/100x100",
+  },
+  rating: {
+    type: String,
+    default: "Rating",
+  },
+  year: {
+    type: Number,
+  },
+  genre: {
+    type: String,
+    default: " ",
+  },
+  review: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Review",
     },
-    pic: { 
-        type: String, 
-        default: ''
-    },
-    rating: {
-        type: String,
-        default: 'Rating'
-    },
-    comments: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comment'
-    }]
-})
+  ],
+});
 
-
-module.exports = mongoose.model('Movie', movieSchema)
+module.exports = mongoose.model("Movie", movieSchema);
