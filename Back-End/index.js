@@ -1,11 +1,13 @@
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const app = express()
 
 app.use(express.json())
 app.use('/movies',require ('./controllers/movies'))
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.send('Hello world!')

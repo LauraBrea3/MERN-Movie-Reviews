@@ -8,9 +8,8 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      Hello World
-      <Review/>
-      <MovieList />
+      <Header/>
+      <MovieList/>
     </div>
   );
 }
