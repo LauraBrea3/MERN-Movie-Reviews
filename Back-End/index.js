@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 
 const app = express()
 
+app.use(express.json())
 app.use('/movies',require ('./controllers/movies'))
 
 app.get('/', (req, res) => {
