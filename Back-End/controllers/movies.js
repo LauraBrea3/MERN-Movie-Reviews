@@ -23,7 +23,7 @@ router.post('/', (req,res) => {
    ;
 })
 
-router.put('/', (req,res) => {
+router.put('/:id', (req,res) => {
     Movie.findByIdAndUpdate (req.params.id, req.body)
     .then (movie => res.json ({ msg: 'Updated successfully'}))
     .catch (err => res.status (400).json ({ error: 'Unable to update the Database'}));
