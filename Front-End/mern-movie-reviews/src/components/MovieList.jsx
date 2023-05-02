@@ -1,46 +1,35 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useEffect, useState } from 'react'
 
 
-function MovieList() {
+
+function MovieList({movie}) {
+
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    
+        <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={movie.poster} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{movie.title}</Card.Title>
+        <Card.Subtitle style={ { borderBottom: "1px solid black", padding: "2px" } }>{movie.year}</Card.Subtitle>
+        <Card.Subtitle style={{padding:"10px"}}>{movie.genre}</Card.Subtitle>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          <div>
+          {movie.review}
+          </div>
+          <div>
+          Rated: {movie.rating}
+          </div>
+
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
-  );
+  )   
+
 }
 
 export default MovieList;
 
 
 
-
-// import React from 'react'
-// import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
-
-// export default function MovieList() {
-//   return (
-//     <div>
-//         <Card style={{ width: '18rem' }}>
-//       <Card.Img variant="top" src="holder.js/100px180" />
-//       <Card.Body>
-//         <Card.Title>Card Title</Card.Title>
-//         <Card.Text>
-//           Some quick example text to build on the card title and make up the
-//           bulk of the card's content.
-//         </Card.Text>
-//         <Button variant="primary">Go somewhere</Button>
-//       </Card.Body>
-//     </Card>
-//     </div>
-//   )
-// }
