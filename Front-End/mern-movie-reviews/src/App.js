@@ -5,6 +5,7 @@ import Header from './components/Header';
 import MovieList from './components/MovieList';
 import axios from 'axios'
 
+
 function App() {
 
   const [movies, setMovies] = useState([])
@@ -18,6 +19,19 @@ console.log(movies)
 
 useEffect(() => {
   fetchMovies()
+}, [])
+
+const [reviews, setReviews] = useState([])
+
+const fetchReviews = async() => {
+  const { data } = await axios.get('/reviews')
+  setReviews(data)
+}
+
+console.log(reviews)
+
+useEffect(() => {
+  fetchReviews()
 }, [])
   
 

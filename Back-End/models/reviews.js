@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 
 const reviewSchema = new mongoose.Schema({
-    movie:[{
+    movie:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Movie'
-    }],
+    },
     yourName: {
         type: String,
         required: true

@@ -6,6 +6,7 @@ const app = express()
 
 app.use(express.json())
 app.use('/movies',require ('./controllers/movies'))
+app.use('/reviews', require('./controllers/reviews'))
 app.use(cors())
 
 app.get('/', (req, res) => {

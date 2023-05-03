@@ -2,11 +2,11 @@ const router = require('express').Router()
 const db = require('../models')
 
 
-router.get ('/', (req, res) => {
-    db.Movie.find ()
-    .then (movies => res.json (movies))
-    .catch (err => res.status (404).json ({ nomoviesfound: 'No Movies Found'}));
-})
+// router.get ('/', (req, res) => {
+//     db.Movie.find ()
+//     .then (movies => res.json (movies))
+//     .catch (err => res.status (404).json ({ nomoviesfound: 'No Movies Found'}));
+// })
 
 router.get ('/:id', (req, res) => {
     db.Movie.findById (req.params.id)
@@ -21,39 +21,6 @@ router.post('/', (req,res) => {
    ;
 })
 
-// router.get('/:id', (req,res) => {
-//     db.Movie.findById(req.params.id)
-//     .populate('review')
-//     .then(movie => {
-//         console.log(movie.review)
-//         res.render('/movies', { movie })
-//     })
-//     .catch(err => {
-//         console.log('err', err)
-//         res.render('error404')
-//     })
-// })
-
-// router.post('/:id/reviews', (req,res) => {
-//     console.log(req.body)
-//     db.Movie.findById(req.params.id)
-//     .then(movie => {
-//         db.Review.create(req.body)
-//         .then(reviews => {
-//             movie.review.push(reviews.id)
-//             movie.save()
-//             .then(() => {
-//                 res.redirect(`/movies/${req.params.id}`)
-//             })
-//         })
-//         .catch(err => {
-//             res.render('error404')
-//         })
-//     })
-//     .catch(err => {
-//         res.render('error404')
-//     })
-// })
 
 router.put('/:id', (req,res) => {
    db.Movie.findByIdAndUpdate (req.params.id, req.body)

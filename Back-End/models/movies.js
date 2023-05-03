@@ -19,9 +19,13 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  review: {
+  description: {
     type: String,
     required: true
+  },
+  review: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Review'
   }
 });
 
