@@ -22,8 +22,6 @@ function MovieList({ movie }) {
           Rated: {movie.rating}
           </div>
         </Card.Text>
-       
-    
 
       </Card.Body>
     </Card>
