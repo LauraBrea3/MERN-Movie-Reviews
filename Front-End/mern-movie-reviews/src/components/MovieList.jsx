@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react'
 
 
 
+
 function MovieList({ movie }) {
+
 
   return (
     
@@ -21,7 +23,10 @@ function MovieList({ movie }) {
           <div>
           Rated: {movie.rating}
           </div>
+          
         </Card.Text>
+       
+        
 
       </Card.Body>
     </Card>

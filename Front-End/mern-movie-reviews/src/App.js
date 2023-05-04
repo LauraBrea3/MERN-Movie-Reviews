@@ -80,6 +80,7 @@ let handleSubmit = async (e) => {
           <MovieList key={movies.id} movie={movies} />
         ))
       }
+       
     </div>
       <div className="d-flex flex-wrap justify-content-center">
       <div className="reviews">
