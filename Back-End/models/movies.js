@@ -21,12 +21,12 @@ const movieSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   review: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Review'
-  }
+    ref: "Review",
+  },
 });
 
-module.exports = mongoose.model('Movie', movieSchema);
+module.exports = mongoose.model("Movie", movieSchema);
