@@ -4,6 +4,12 @@ const router = require('express').Router()
 const db = require('../models')
 
 
+router.get ('/', (req, res) => {
+    db.Review.find ()
+    .then (reviews => res.json (reviews))
+    .catch (err => res.status (404).json ({ noreviewsfound: 'No Reviews Found'}));
+})
+
 router.get ('/:id/reviews', (req, res) => {
     db.Review.find({movie:req.params.id})
     .populate('movie')

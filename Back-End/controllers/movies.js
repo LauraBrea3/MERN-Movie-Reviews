@@ -2,11 +2,11 @@ const router = require('express').Router()
 const db = require('../models')
 
 
-// router.get ('/', (req, res) => {
-//     db.Movie.find ()
-//     .then (movies => res.json (movies))
-//     .catch (err => res.status (404).json ({ nomoviesfound: 'No Movies Found'}));
-// })
+router.get ('/', (req, res) => {
+    db.Movie.find ()
+    .then (movies => res.json (movies))
+    .catch (err => res.status (404).json ({ nomoviesfound: 'No Movies Found'}));
+})
 
 router.get ('/:id', (req, res) => {
     db.Movie.findById (req.params.id)

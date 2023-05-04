@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.reviews{
+    box-sizing: border-box;
+    background-color:rgb(3, 98, 186);
+    box-shadow:10px 10px 5px #e9c4c4;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height:600px;
+    width: 400px;
+    border-radius: 5px;
+    padding:5px ;
+}
+
+.movieCard{
+  margin: 10px
+}
+
+.formTitle{
+  font-size: 20px;
+  color: white;
+  margin: 15px
+}
+.formLabel{
+  color:white
+}

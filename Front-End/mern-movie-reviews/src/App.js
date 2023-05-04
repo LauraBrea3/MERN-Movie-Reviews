@@ -34,6 +34,39 @@ useEffect(() => {
   fetchReviews()
 }, [])
   
+const [movie, setMovie] = useState("");
+const [yourName, setYourName] = useState("");
+const [stars, setStars] = useState("");
+const [review, setReview] = useState("");
+const [message, setMessage] = useState("")
+
+let handleSubmit = async (e) => {
+ e.preventDefault();
+ try{
+  let res = await axios.get('/reviews', {
+    method: "POST",
+    body: JSON.stringify({
+      movie: movie,
+      yourName: yourName,
+      stars: stars,
+      review: review
+    }),
+  });
+  let resJson = await res.json();
+  if(res.status === 200){
+    setMovie("");
+    setYourName("");
+    setStars("");
+    setReview("");
+    setMessage("Review Added Successfully")
+  } else {
+    setMessage("An error has occured")
+  }
+ } catch (err){
+  console.log(err)
+ }
+};
+
 
   return (
     <div className="App">
@@ -43,14 +76,68 @@ useEffect(() => {
         
       <div className="d-flex flex-wrap justify-content-center"> 
       {movies
-        .map((movie) => (
-          <MovieList key={movie.id} movie={movie} />
+        .map((movies) => (
+          <MovieList key={movies.id} movie={movies} />
         ))
       }
+    </div>
+      <div className="d-flex flex-wrap justify-content-center">
+      <div className="reviews">
+      <form  className="textFields"onSubmit={handleSubmit}>
+        <div className="form-group">
+        <label className="formTitle">Add a Movie Review</label>
+        <br/>
+        <label className="formLabel" htmlFor="movie">Movie Title</label>
+        <input className="form-control"
+          type="text"
+          value={movie}
+          placeholder="Movie Title"
+          onChange={(e) => setMovie(e.target.value)}
+        />
+        </div>
+        <br/>
+        <div className="form-group">
+        <label className="formLabel" htmlFor="yourName">Your Name</label>
+        <input className="form-control"
+          type="text"
+          value={yourName}
+          placeholder="Your Name"
+          onChange={(e) => setYourName(e.target.value)}
+        />
+        </div>
+        <br/>
+        <div className="form-group">
+        <label className="formLabel" htmlFor="stars">Stars</label>
+        <input className="form-control"
+          type="text"
+          value={stars}
+          placeholder="How many Stars do you rate it?"
+          onChange={(e) => setStars(e.target.value)}
+        />
+        </div>
+        <br/>
+        <div className="form-group">
+        <label className="formLabel" htmlFor="review">Review</label>
+        <input className="form-control"
+          type="text"
+          value={review}
+          maxLength="1000"
+          placeholder="Write your review here"
+          onChange={(e) => setReview(e.target.value)}
+        />
+        </div>
 
+        <br/>
+
+        <button className="btn btn-primary" type="submit">Submit Review</button>
+
+        <div className="message">{message ? <p>{message}</p> : null}</div>
+      </form>
       </div>
+      </div>
+   
 
-        </main>
+      </main>
       
     </div>
   );
