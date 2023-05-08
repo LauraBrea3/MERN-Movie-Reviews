@@ -1,6 +1,5 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Review from "./components/Review";
 import Header from "./components/Header";
 import MovieList from "./components/MovieList";
 import axios from "axios";
@@ -83,13 +82,13 @@ function App() {
                 <label className="formLabel" htmlFor="movie">
                   Movie Title
                 </label>
-                <input
-                  className="form-control"
-                  type="text"
-                  value={movie}
-                  placeholder="Movie Title"
-                  onChange={(e) => setMovie(e.target.value)}
-                />
+                <select name="movie" id="movie" defaultValue=" ">
+            {movies.map(movie => {
+              return (
+                <option value={movie.id} key={movie.id}>{movie.title}</option>
+              )
+            })}
+          </select>
               </div>
               <br />
               <div className="form-group">
@@ -148,3 +147,4 @@ function App() {
 }
 
 export default App;
+
