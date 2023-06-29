@@ -1,4 +1,4 @@
-MERN MOVIE REVIEWS
+# MERN MOVIE REVIEWS
 
 Welcome to our Movie Reviews App.  For this app we used MongoDB as our database to store our data, we used Express to create our RESTful routes in the Back-End, React to show our Front-End and NodeJs to install packages.  Once you clone or fork the repo, you must npm i -y in both the Back-End and in the Front-End/mern-movie-reviews to get all the necessesary packages installed.
 
