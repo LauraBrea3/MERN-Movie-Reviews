@@ -6,6 +6,26 @@ Our vision was to create an App where you could search up movies and be able to 
 
 We were able to connect both the front and back end together using Axios and Cors, however one of our controllers (the reviews controller) we were not successful in showing on the front end.  In the back-end everything works as it should however.
 
+API:
+In the back-end you are able to add movies, edit them, delete them and look up a specific movie. You can also look up a review on it's own or the reviews for a specific movie.  You are also able to add reviews, edit them and delete them. All of this can be done using postman and localhost:5000.  The RESTful methpds we used were: GET, POST, PUT, DELETE.
+
 For the movie posters and descriptions we used IMDb.com, so that credit goes to them.
 
 We are going to use Vercel to deploy what we have.
+
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+
+### Added
+
+- Added some more information on the README.md file (6-29-2023)
+
+### Changed
+
+### Removed
+
+### Fixed
